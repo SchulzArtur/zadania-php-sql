@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Wylęgarnia Drobiu</title>
+    <title>Zadanie PHP SQL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,12 +13,14 @@
 		<input type="text" name="imie" />
 		<input type="text" name="nazwisko" />
 		<input type="text" name="wiek" />
-		<input type="submit" />
+			<input type="submit" />
 	</form>
 
 	
 	<?php
-	
+
+	//Zadanie 1
+
 	$serveraddress = 'localhost';
 	$serverlogin = 'aaartur_tmp';
 	$serverpassword = '';
@@ -53,6 +55,8 @@
 		$connect->close(); 
 	}
 
+	//Zadanie 2
+
 	$connect2 = new mysqli($serveraddress, $serverlogin, $serverpassword, $serwerdb );
 
 	if($connect2->connect_error){ 
@@ -86,8 +90,34 @@
 
 $connect2->close();
 
+echo "<br><br>";
 
 
+
+//Zadanie 3
+class Osoba{
+
+	public $dane = ['imie' => '', 'nazwisko' => '', 'wiek' => ''];
+
+	function dodajOsobe(){
+		$this->dane['imie'] = 'Piotr';
+		$this->dane['nazwisko'] = 'Moje naziwsko';
+		$this->dane['wiek'] = '21';
+	}
+
+	function pokazOsobe(){
+		print_r($this->dane['imie']);
+		print_r($this->dane['nazwisko']);
+		print_r($this->dane['wiek']);
+	}
+}
+$nowaOsoba = new Osoba();
+$nowaOsoba->dodajOsobe();
+$nowaOsoba->pokazOsobe();
+
+echo "<br><br>";
+
+//Zadanie 4
 
 $connect3 = new mysqli($serveraddress, $serverlogin, $serverpassword, $serwerdb );
 
@@ -122,30 +152,6 @@ endwhile;
 }
 //close the connection
 mysqli_close($connect3);
-
-
-
-//Zadanie 4
-class Osoba{
-
-	public $dane = ['imie' => '', 'nazwisko' => '', 'wiek' => ''];
-
-	function dodajOsobe(){
-		$this->dane['imie'] = 'Piotr';
-		$this->dane['nazwisko'] = 'Moje naziwsko';
-		$this->dane['wiek'] = '21';
-	}
-
-	function pokazOsobe(){
-		print_r($this->dane['imie']);
-		print_r($this->dane['nazwisko']);
-		print_r($this->dane['wiek']);
-	}
-}
-$nowaOsoba = new Osoba();
-$nowaOsoba->dodajOsobe();
-$nowaOsoba->pokazOsobe();
-
 
 
 
