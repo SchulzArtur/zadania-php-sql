@@ -23,7 +23,7 @@
 
 	$serveraddress = 'localhost';
 	$serverlogin = 'aaartur_tmp';
-	$serverpassword = '';
+	$serverpassword = 'XheOCSbKB';
 	$serwerdb = 'aaartur_tmp';	
 
 
